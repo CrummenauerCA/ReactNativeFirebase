@@ -3,8 +3,9 @@ import { StyleSheet, Text, View } from 'react-native'
 
 import firebase from './firebase'
 import Auth from './auth'
+import SignInContent from './signInContent'
 
-import { Container, Content, Header, Form, Input, Item, Button, Label } from 'native-base'
+import { Container, Button } from 'native-base'
 
 export default class App extends React.Component {
   constructor(props) {
@@ -33,16 +34,7 @@ export default class App extends React.Component {
   render() {
     if (!this.state.user) return <Auth />
     return (
-      <Container style={styles.container}>
-        <Text>Usuário logado! Bem vindo</Text>
-        <Text>UID do usuário: {this.state.user.uid}</Text>
-        <Text>Nome de usuário: {this.state.user.displayName}</Text>
-        <Text>Acessou usando: {this.state.user.providerData[0].providerId}</Text>
-        <Button full rounded success style={{ marginTop: 10 }}
-          onPress={() => this.logoutUser()}>
-          <Text style={{ color: '#fff' }}>Sair da minha conta</Text>
-        </Button>
-      </Container>
+      <SignInContent user={this.state.user} />
     )
   }
 }
