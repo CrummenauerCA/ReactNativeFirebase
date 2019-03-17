@@ -3,15 +3,14 @@ import { StyleSheet, Text, View } from 'react-native'
 
 import firebase from './firebase'
 import Auth from './auth'
+import Load from './load'
 import SignInContent from './signInContent'
-
-import { Container, Button } from 'native-base'
 
 export default class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      user: '',
+      user: 'initial',
       email: '',
       password: ''
     }
@@ -25,6 +24,7 @@ export default class App extends React.Component {
         this.setState({ user: null })
       }
     })
+    console.log('componentDidMount - onAuthStateChanged')
   }
 
   logoutUser = () => {
@@ -32,6 +32,7 @@ export default class App extends React.Component {
   }
 
   render() {
+    if (this.state.user == 'initial') return <Load />
     if (!this.state.user) return <Auth />
     return (
       <SignInContent user={this.state.user} />
@@ -43,7 +44,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    // alignItems: 'center',
     justifyContent: 'center',
     padding: 50,
   },

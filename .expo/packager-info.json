@@ -1,10 +1,10 @@
 {
   "devToolsPort": 19002,
-  "expoServerPort": 19000,
-  "packagerPort": 19001,
-  "packagerPid": 1548,
-  "expoServerNgrokUrl": "https://zu-az4.anonymous.expo-firebase.exp.direct",
-  "packagerNgrokUrl": "https://packager.zu-az4.anonymous.expo-firebase.exp.direct",
-  "ngrokPid": 2596,
+  "expoServerPort": null,
+  "packagerPort": null,
+  "packagerPid": null,
+  "expoServerNgrokUrl": null,
+  "packagerNgrokUrl": null,
+  "ngrokPid": null,
   "webpackServerPort": null
 }
