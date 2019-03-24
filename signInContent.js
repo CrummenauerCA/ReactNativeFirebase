@@ -1,7 +1,7 @@
 import React from 'react'
 import firebase from './firebase'
 import { StyleSheet, Text, View, StatusBar, ListView } from 'react-native'
-import { Container, Content, Header, Form, Input, Item, Button, Label, Icon, List, ListItem } from 'native-base'
+import { Container, Content, Header, Form, Input, Item, Button, Label, Icon, List, ListItem, } from 'native-base'
 
 var data = ['Cezar', 'Augusto', 'Crummenauer']
 export default class SignInContent extends React.Component {
@@ -23,7 +23,13 @@ export default class SignInContent extends React.Component {
     const name = this.props.user.displayName
     return (
       <Container style={styles.container}>
-        <Content style={{ marginTop: StatusBar.currentHeight, marginBottom: 20 }}>
+        <Content style={{ marginTop: StatusBar.currentHeight }}>
+          <Item>
+            <Input placeholder="Adicionar item" />
+            <Button style={{margin:5, padding: 10}}>
+              <Icon name="add" />
+            </Button>
+          </Item>
           <List
             dataSource={this.ds.cloneWithRows(this.state.ListViewData)}
             renderRow={data =>
@@ -56,7 +62,7 @@ export default class SignInContent extends React.Component {
         <Text style={{ textAlign: 'center' }}>
           Acesso através de: {provider == 'password' ? 'email e senha' : provider}
         </Text>
-        <Button full rounded success style={{ marginLeft: 50, marginRight: 50, marginBottom: 10, marginTop:10 }}
+        <Button full rounded success style={{ marginLeft: 50, marginRight: 50, marginBottom: 10, marginTop: 10 }}
           onPress={() => this.logoutUser()}>
           <Icon active name='log-in' />
           <Text style={{ color: '#fff' }}>Sair da minha conta</Text>
