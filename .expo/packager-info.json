@@ -1,10 +1,10 @@
 {
   "devToolsPort": 19002,
-  "expoServerPort": null,
-  "packagerPort": null,
-  "packagerPid": null,
-  "expoServerNgrokUrl": null,
-  "packagerNgrokUrl": null,
-  "ngrokPid": null,
+  "expoServerPort": 19000,
+  "packagerPort": 19001,
+  "packagerPid": 12632,
+  "expoServerNgrokUrl": "https://zu-az4.anonymous.reactnativefirebase.exp.direct",
+  "packagerNgrokUrl": "https://packager.zu-az4.anonymous.reactnativefirebase.exp.direct",
+  "ngrokPid": 6480,
   "webpackServerPort": null
 }
